@@ -1,0 +1,39 @@
+<template class="task-template">
+  <div id="about-modal" class="about modal" ng-controller="AboutController">
+    <div class="about-wrapper">
+      <header class="about-header">
+        <!--<img class="about-logo" src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x" alt="Electron API Demos">-->
+          <img class="about-logo" src="assets/img/dukeDSLogo.png" srcset="assets/img/dukeDSLogo.png 1x, assets/img/dukeDSLogo.png 2x" alt="Electron API Demos">
+      </header>
+      <main class="about-sections">
+        <section class="about-section play-along">
+          <h2>Duke Data Service</h2>
+            <p>The Duke Data Service is a platform for reproducible research. There are several resources online for those
+                interested in learning more. The backend is available on <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">Github<span class="u-visible-to-screen-reader">(opens in new window)</span></a>
+                and is open-sourced. In order to use this application, you will first need to setup a software agent on the
+                <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">duke data service portal<span class="u-visible-to-screen-reader">(opens in new window)</span></a>.
+                Instructions can be found <a href="https://desktop.github.com/">online<span class="u-visible-to-screen-reader">(opens in new window)</span></a> and once generated paste in the box below (if empty).
+            </p>
+            <p>{{1+2}}</p>
+            <textarea rows="4" cols="50">
+            {{credentials}}
+            </textarea>
+        </section>
+        <section class="about-section about-code">
+          <h2>About the Software Agent</h2>
+            <p> Each time you login, this application will look to see if you've previously added a software agent. If you have,
+            it will be populted in the field above. If at any time you'd like to change the software agent, simply copy and paste
+            that information above. That will automatically update the scope of your current duke data service desktop interactions.
+            If you change the software agent from environment to enviroment (i.e. develop, production, usatest), all information on other
+            environements will then be loaded.
+            </p>
+        </section>
+        <footer class="about-section footer">
+          <div class="rainbow-button-wrapper">
+            <button id="get-started" class="about-button modal-hide">Get Started</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+</template>
