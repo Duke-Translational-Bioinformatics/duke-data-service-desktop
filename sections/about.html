@@ -8,25 +8,24 @@
       <main class="about-sections">
         <section class="about-section play-along">
           <h2>Duke Data Service</h2>
-            <p>The Duke Data Service is a platform for reproducible research. There are several resources online for those
-                interested in learning more. The backend is available on <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">Github<span class="u-visible-to-screen-reader">(opens in new window)</span></a>
-                and is open-sourced. In order to use this application, you will first need to setup a software agent on the
-                <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">duke data service portal<span class="u-visible-to-screen-reader">(opens in new window)</span></a>.
-                Instructions can be found <a href="https://desktop.github.com/">online<span class="u-visible-to-screen-reader">(opens in new window)</span></a> and once generated paste in the box below (if empty).
-            </p>
-            <p>{{1+2}}</p>
-            <textarea rows="4" cols="50">
-            {{credentials}}
-            </textarea>
+          <p> The box below allows you to "login" to Duke Data Service. If you have already included Software Agent credentials
+            previously, they should be shown below. If you have not, please follow  <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service-desktop">these instructions
+              <span class="u-visible-to-screen-reader">(opens in new window)</span></a> so that the appropriate information can
+            be pasted into the box below.
+          </p>
         </section>
+        <div class="about-textarea">
+          <textarea rows="4" cols="50">{{creds}}
+          </textarea>
+        </div>
         <section class="about-section about-code">
           <h2>About the Software Agent</h2>
-            <p> Each time you login, this application will look to see if you've previously added a software agent. If you have,
-            it will be populted in the field above. If at any time you'd like to change the software agent, simply copy and paste
-            that information above. That will automatically update the scope of your current duke data service desktop interactions.
-            If you change the software agent from environment to enviroment (i.e. develop, production, usatest), all information on other
-            environements will then be loaded.
-            </p>
+          <p>The Duke Data Service is a platform for reproducible research. There are several resources online for those
+            interested in learning more. The backend is available on <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">Github<span class="u-visible-to-screen-reader">(opens in new window)</span></a>
+            and is open-sourced. In order to use this application, you will first need to setup a software agent on the
+            <a href="https://dataservice.duke.edu">duke data service portal<span class="u-visible-to-screen-reader">(opens in new window)</span></a>.
+            Instructions can be found <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service-desktop">online<span class="u-visible-to-screen-reader">(opens in new window)</span></a> and once generated paste in the box below (if empty).
+          </p>
         </section>
         <footer class="about-section footer">
           <div class="rainbow-button-wrapper">

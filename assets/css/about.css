@@ -37,6 +37,11 @@
   border-bottom: 1px solid hsl(0,0%,88%);
 }
 
+.about-textarea {
+  display: block;
+  text-align: center;
+}
+
 .about-logo {
   display: block;
   margin: 0 auto;

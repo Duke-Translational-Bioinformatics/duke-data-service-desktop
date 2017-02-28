@@ -56,6 +56,7 @@
     "angular": "^1.6.2",
     "electron-json-storage": "^2.0.0",
     "electron-shortcut-normalizer": "^1.0.0",
+    "fs": "0.0.1-security",
     "glob": "^7.1.0",
     "highlight.js": "^9.3.0"
   },
