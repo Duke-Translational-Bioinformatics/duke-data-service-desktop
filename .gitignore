@@ -5,7 +5,7 @@ npm-debug.log*
 
 #Mac specific
 *.DS_Store
-*.idea
+.idea/
 
 # Runtime data
 pids
