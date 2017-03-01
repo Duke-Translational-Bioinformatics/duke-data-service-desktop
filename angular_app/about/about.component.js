@@ -1,26 +1,75 @@
 const fs = require('fs');
 const path = require('path');
 
-var app = angular.module('about', []);
+var app = angular.module('about', ["ngMessages"]);
 
-app.service('credentials', function() {
-    this.myFunc = function (x) {
-        if (fs.existsSync(x)) {
-            var notesByte = fs.readFileSync(x);
-            var notesJson = JSON.parse(notesByte);
-            return JSON.stringify(notesJson);
-        } else {
-            return 'Paste Software Agent Credentials here.';
+app.service('credentials', function () {
+    var credFile = path.join(process.env.HOME, '.ddsnodeclient');
+    var _credentials_json = '';
+
+    this.setCredentials = function (credentials_json) {
+        _credentials_json = JSON.parse(credentials_json);
+        try {
+            fs.writeFileSync(credFile, JSON.stringify(_credentials_json));
+        } catch (e) {
+            return alert(e);
         }
     }
+
+    this.getCredentials = function () {
+        if (_credentials_json) {
+            return _credentials_json;
+        } else {
+            if (fs.existsSync(credFile)) {
+                var notesByte = fs.readFileSync(credFile);
+                var notesJson = JSON.parse(notesByte);
+                _credentials_json = JSON.stringify(notesJson)
+                return JSON.stringify(notesJson);
+            } else {
+                return 'Paste Software Agent Credentials here.';
+            }
+        }
+    }
+});
+
+app.filter('checkmark', function() {
+    return function(input) {
+        return input ? '\u2714' : '\u2718';
+    };
 });
 
 app.controller('AboutController', [
     '$scope', 'credentials',
     function AboutController($scope, credentials) {
-        $scope.message = 'HOME PAGE';
-        $scope.creds = credentials.myFunc(path.join(process.env.HOME, '.ddsnodeclient'));
-        // $scope.creds = '{just a test}';
-
+        $scope.creds = credentials.getCredentials();
     }
 ]);
+
+app.directive("isvalidjson", function($q, $timeout) {
+    var isvalidjson = function(n) {
+        try {
+            cred_json = JSON.parse(n);
+            return true
+        } catch (err) {
+            // Handle the error here.
+            return false
+        }
+    };
+    return {
+        restrict: "A",
+        require: "ngModel",
+        link: function(scope, element, attributes, ngModel) {
+            ngModel.$asyncValidators.prime = function(modelValue) {
+                var defer = $q.defer();
+                $timeout(function(){
+                    if(isvalidjson(modelValue)) {
+                        defer.resolve();
+                    } else {
+                        defer.reject();
+                    }
+                }, 500);
+                return defer.promise;
+            }
+        }
+    };
+});

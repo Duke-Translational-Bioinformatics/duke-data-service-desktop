@@ -14,10 +14,34 @@
             be pasted into the box below.
           </p>
         </section>
+        <form name="myForm">
         <div class="about-textarea">
-          <textarea rows="4" cols="50">{{creds}}
+          <textarea type="string" rows="4" cols="50" name="credsini" ng-model="creds" isvalidjson>
           </textarea>
+          <!--Name: <input ng-model="creds">-->
+          <div ng-if="myForm.credsini.$pending">
+            Verifying....
+          </div>
+          <div ng-messages="myForm.credsini.$error">
+            <div ng-messages-include="messages.html"></div>
+          </div>
         </div>
+        </form>
+
+        <!--<form name="profileForm">-->
+
+          <!--<input type="number" name="favoriteNumber"-->
+                 <!--ng-model="number"-->
+                 <!--required min="1" odd prime />-->
+
+          <!--<div ng-if="profileForm.favoriteNumber.$pending">-->
+            <!--Verifying....-->
+          <!--</div>-->
+          <!--<div ng-messages="profileForm.favoriteNumber.$error">-->
+            <!--<div ng-messages-include="messages.html"></div>-->
+          <!--</div>-->
+        <!--</form>-->
+
         <section class="about-section about-code">
           <h2>About the Software Agent</h2>
           <p>Duke Data Service is a platform for reproducible research. There are several resources online for those

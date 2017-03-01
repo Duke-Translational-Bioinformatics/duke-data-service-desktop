@@ -157,4 +157,19 @@ footer.about-section {
   .about-wrapper {
     display: flex;
   }
+
+
+  .ng-invalid {
+    border-color: red;
+    border-width: 2px;
+  }
+
+  .ng-pending {
+    border-color: white;
+  }
+
+  .errors {
+    font-size:smaller;
+    color:red;
+  }
 }
