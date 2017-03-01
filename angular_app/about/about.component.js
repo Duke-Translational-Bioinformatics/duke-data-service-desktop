@@ -49,7 +49,11 @@ app.directive("isvalidjson", function($q, $timeout) {
     var isvalidjson = function(n) {
         try {
             cred_json = JSON.parse(n);
-            return true
+            if (typeof cred_json === 'object') {
+                return true
+            } else {
+                return false
+            }
         } catch (err) {
             // Handle the error here.
             return false
