@@ -67,6 +67,13 @@ app.directive("isvalidjson", function($q, $timeout) {
                 var defer = $q.defer();
                 $timeout(function(){
                     if(isvalidjson(modelValue)) {
+                        console.log(modelValue)
+                        console.log(typeof modelValue)
+                        try {
+                            fs.writeFileSync(path.join(process.env.HOME, '.ddsnodeclient'), modelValue);
+                        } catch (e) {
+                            return alert(e);
+                        }
                         defer.resolve();
                     } else {
                         defer.reject();
