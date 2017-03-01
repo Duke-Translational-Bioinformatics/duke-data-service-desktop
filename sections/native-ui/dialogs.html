@@ -1,0 +1,58 @@
+<template class="task-template">
+  <section id="dialogs-section" class="section js-section u-category-native-ui">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
+          Local Projects
+        </h1>
+        <h3>The <code>Local Projects</code> dialog allows users to view, add, and manage all local projects.</h3>
+
+        <p>For this prototype, a local project is defined as a parent directory on the client machine that has an associated DDS project on the DDS backend.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button">Add New Local Project
+          <div class="demo-meta u-avoid-clicks">Provides: Interface to add new project</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="select-directory">Add</button>
+            <span class="demo-response" id="selected-file"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button">View All Local Projects
+          <div class="demo-meta u-avoid-clicks">Provides: List of all local projects and status of remote project connectivity.</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button id="error-dialog" class="demo-button">View Demo</button>
+          </div>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
+
+          <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon startup.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/native-ui/dialogs/error.js"></code></pre>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/native-ui/dialogs/error.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      require('./renderer-process/native-ui/dialogs/open-file')
+      require('./renderer-process/native-ui/dialogs/error')
+//      require('./renderer-process/native-ui/dialogs/information')
+//      require('./renderer-process/native-ui/dialogs/save')
+    </script>
+
+  </section>
+</template>

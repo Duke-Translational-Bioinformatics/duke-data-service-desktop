@@ -3,6 +3,11 @@ logs
 *.log
 npm-debug.log*
 
+#Mac specific
+*.DS_Store
+.idea/
+playground/
+
 # Runtime data
 pids
 *.pid

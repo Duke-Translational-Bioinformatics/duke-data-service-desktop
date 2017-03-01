@@ -1,0 +1,62 @@
+<template class="task-template">
+  <div id="about-modal" class="about modal" ng-controller="AboutController">
+    <div class="about-wrapper">
+      <header class="about-header">
+        <!--<img class="about-logo" src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x" alt="Electron API Demos">-->
+          <img class="about-logo" src="assets/img/dukeDSLogo.png" srcset="assets/img/dukeDSLogo.png 1x, assets/img/dukeDSLogo.png 2x" alt="Electron API Demos">
+      </header>
+      <main class="about-sections">
+        <section class="about-section play-along">
+          <h2>Duke Data Service</h2>
+          <p> The box below allows you to "login" to Duke Data Service. If you have already included Software Agent credentials
+            previously, they should be shown below. If you have not, please follow  <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service-desktop">these instructions
+              <span class="u-visible-to-screen-reader">(opens in new window)</span></a> so that the appropriate information can
+            be pasted into the box below.
+          </p>
+        </section>
+        <form name="myForm">
+        <div class="about-textarea">
+          <textarea type="string" rows="4" cols="50" name="credsini" ng-model="creds" isvalidjson>
+          </textarea>
+          <!--Name: <input ng-model="creds">-->
+          <div ng-if="myForm.credsini.$pending">
+            Verifying....
+          </div>
+          <div ng-messages="myForm.credsini.$error">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </div>
+        </form>
+
+        <!--<form name="profileForm">-->
+
+          <!--<input type="number" name="favoriteNumber"-->
+                 <!--ng-model="number"-->
+                 <!--required min="1" odd prime />-->
+
+          <!--<div ng-if="profileForm.favoriteNumber.$pending">-->
+            <!--Verifying....-->
+          <!--</div>-->
+          <!--<div ng-messages="profileForm.favoriteNumber.$error">-->
+            <!--<div ng-messages-include="messages.html"></div>-->
+          <!--</div>-->
+        <!--</form>-->
+
+        <section class="about-section about-code">
+          <h2>About the Software Agent</h2>
+          <p>Duke Data Service is a platform for reproducible research. There are several resources online for those
+            interested in learning more. The backend is available on <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service">Github<span class="u-visible-to-screen-reader">(opens in new window)</span></a>
+            and is open-sourced. In order to use this application, you will first need to setup a software agent on the
+            <a href="https://dataservice.duke.edu">duke data service portal<span class="u-visible-to-screen-reader">(opens in new window)</span></a>.
+            Instructions can be found <a href="https://github.com/Duke-Translational-Bioinformatics/duke-data-service-desktop">online<span class="u-visible-to-screen-reader">(opens in new window)</span></a> and once generated paste in the box below (if empty).
+          </p>
+        </section>
+        <footer class="about-section footer">
+          <div class="rainbow-button-wrapper">
+            <button id="get-started" class="about-button modal-hide">Get Started</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+</template>
