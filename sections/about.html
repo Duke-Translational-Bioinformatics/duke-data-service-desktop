@@ -16,7 +16,7 @@
         </section>
         <form name="myForm">
         <div class="about-textarea">
-          <textarea type="string" rows="4" cols="50" name="credsini" ng-model="creds" isvalidjson>
+          <textarea type="string" rows="8" cols="75" name="credsini" ng-model="creds" isvalidjson>
           </textarea>
           <!--Name: <input ng-model="creds">-->
           <div ng-if="myForm.credsini.$pending">
@@ -27,20 +27,6 @@
           </div>
         </div>
         </form>
-
-        <!--<form name="profileForm">-->
-
-          <!--<input type="number" name="favoriteNumber"-->
-                 <!--ng-model="number"-->
-                 <!--required min="1" odd prime />-->
-
-          <!--<div ng-if="profileForm.favoriteNumber.$pending">-->
-            <!--Verifying....-->
-          <!--</div>-->
-          <!--<div ng-messages="profileForm.favoriteNumber.$error">-->
-            <!--<div ng-messages-include="messages.html"></div>-->
-          <!--</div>-->
-        <!--</form>-->
 
         <section class="about-section about-code">
           <h2>About the Software Agent</h2>
@@ -53,7 +39,7 @@
         </section>
         <footer class="about-section footer">
           <div class="rainbow-button-wrapper">
-            <button id="get-started" class="about-button modal-hide">Get Started</button>
+              <button id="get-started" class="about-button modal-hide" ng-disabled="myForm.credsini.$invalid">Get Started</button>
           </div>
         </footer>
       </main>

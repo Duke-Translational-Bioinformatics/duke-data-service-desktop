@@ -5,12 +5,12 @@ storage.get('activeSectionButtonId', function (err, id) {
   if (err) return console.error(err)
 
   if (id && id.length) {
+    activateDefaultSection()
+    displayAbout()
+  } else {
     showMainContent()
     const section = document.getElementById(id)
     if (section) section.click()
-  } else {
-    activateDefaultSection()
-    displayAbout()
   }
 })
 

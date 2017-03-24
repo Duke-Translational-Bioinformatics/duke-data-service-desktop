@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const ddsclient = require('ddsnodeclient')
 
 var app = angular.module('about', ["ngMessages"]);
 
@@ -24,7 +25,7 @@ app.service('credentials', function () {
                 var notesByte = fs.readFileSync(credFile);
                 var notesJson = JSON.parse(notesByte);
                 _credentials_json = JSON.stringify(notesJson)
-                return JSON.stringify(notesJson);
+                return JSON.stringify(notesJson, null, '\t');
             } else {
                 return 'Paste Software Agent Credentials here.';
             }
@@ -67,8 +68,8 @@ app.directive("isvalidjson", function($q, $timeout) {
                 var defer = $q.defer();
                 $timeout(function(){
                     if(isvalidjson(modelValue)) {
-                        console.log(modelValue)
-                        console.log(typeof modelValue)
+                        // console.log(modelValue)
+                        // console.log(typeof modelValue)
                         try {
                             fs.writeFileSync(path.join(process.env.HOME, '.ddsnodeclient'), modelValue);
                         } catch (e) {
