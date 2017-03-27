@@ -1,5 +1,5 @@
 <template class="task-template">
-  <section id="windows-section" class="section js-section u-category-windows">
+  <section id="windows-section" class="section js-section u-category-windows" ng-controller="DDSOverviewController">
     <header class="section-header">
       <div class="section-wrapper">
         <h1>
@@ -19,18 +19,14 @@
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="new-window">GET</button>
+            <button class="demo-button" ng-click="myFunction()">Click me!</button>
+            <p>{{ count }}</p>
           </div>
 
           <div class="demo-protip">
-            <h2>ProTip</h2>
-            <strong>Use an invisible browser window to run background tasks.</strong>
-            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
-            <pre>
-                <code class="language-js">var win = new BrowserWindow({
-                  width: 400, height: 225, show: false
-                })</code>
-            </pre>
+            <h2>Results</h2>
+            <p>{{ appApi }}</p>
+            <p>{{ appstatus }}</p>
           </div>
         </div>
       </div>

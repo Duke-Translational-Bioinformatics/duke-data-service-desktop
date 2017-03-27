@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const ddsclient = require('ddsnodeclient')
 
 var app = angular.module('about', ["ngMessages"]);
 
