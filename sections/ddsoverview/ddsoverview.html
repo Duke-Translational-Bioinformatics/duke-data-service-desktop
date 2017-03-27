@@ -1,0 +1,81 @@
+<template class="task-template">
+  <section id="windows-section" class="section js-section u-category-windows">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          Duke Data Service Sytem Overview
+        </h1>
+        <h3>The <code>System Overview</code> provides insights into health checks between this application and the DDS backend.</h3>
+
+        <p>Open the <a href="https://dataservice.duke.edu">portal<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">DDS Server Status
+          <div class="demo-meta u-avoid-clicks">Provides: DDS Server Status Check</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="new-window">GET</button>
+          </div>
+
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Use an invisible browser window to run background tasks.</strong>
+            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
+            <pre>
+                <code class="language-js">var win = new BrowserWindow({
+                  width: 400, height: 225, show: false
+                })</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">My Current DDS Usage
+          <div class="demo-meta u-avoid-clicks">Provides: Usage Statistics</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="manage-window">GET</button>
+            <span class="demo-response" id="manage-window-reply"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">My Project Roles
+          <div class="demo-meta u-avoid-clicks">Provides: Current DDS Project Roles</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="manage-window">GET</button>
+            <span class="demo-response" id="manage-window-reply"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button class="js-container-target demo-toggle-button">My Remote Projects
+          <div class="demo-meta u-avoid-clicks">Provides: List of Remote Projects / indicator for local project link.</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="frameless-window">GET</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
