@@ -1,5 +1,3 @@
-const dds = require('ddsnodeclient')
-
 var app = angular.module('ddsoverview', ["ngMessages",'ngAnimate','angularPromiseButtons']);
 
 app.service('appService', function () {
