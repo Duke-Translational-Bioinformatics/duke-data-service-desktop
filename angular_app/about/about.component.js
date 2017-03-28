@@ -5,10 +5,10 @@ var app = angular.module('about', ["ngMessages"]);
 
 app.service('credentials', function () {
     var credFile = path.join(process.env.HOME, '.ddsnodeclient');
-    var _credentials_json = '';
+    var _credentials_json = null;
 
     this.setCredentials = function (credentials_json) {
-        _credentials_json = JSON.parse(credentials_json);
+        this._credentials_json = JSON.parse(credentials_json);
         try {
             fs.writeFileSync(credFile, JSON.stringify(_credentials_json));
         } catch (e) {
@@ -23,8 +23,8 @@ app.service('credentials', function () {
             if (fs.existsSync(credFile)) {
                 var notesByte = fs.readFileSync(credFile);
                 var notesJson = JSON.parse(notesByte);
-                _credentials_json = JSON.stringify(notesJson)
-                return JSON.stringify(notesJson, null, '\t');
+                this._credentials_json = JSON.stringify(notesJson, null, '\t')
+                return this._credentials_json
             } else {
                 return 'Paste Software Agent Credentials here.';
             }
