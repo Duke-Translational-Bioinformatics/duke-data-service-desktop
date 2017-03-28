@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const ddsnodeclient = require('ddsnodeclient');
 
 var app = angular.module('about', ["ngMessages"]);
 
@@ -70,7 +71,7 @@ app.directive("isvalidjson", function($q, $timeout) {
                         // console.log(modelValue)
                         // console.log(typeof modelValue)
                         try {
-                            fs.writeFileSync(path.join(process.env.HOME, '.ddsnodeclient'), modelValue);
+                            client = new ddsnodeclient.ApiClient(JSON.parse(modelValue));
                         } catch (e) {
                             return alert(e);
                         }

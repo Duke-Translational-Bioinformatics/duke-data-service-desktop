@@ -2,8 +2,8 @@ var app = angular.module('ddsoverview', ["ngMessages",'ngAnimate','angularPromis
 
 app.service('appService', function () {
     this.getMovie = function() {
-        return new dds.AppApi().getApiV1AppStatus().then((response) => {
-            return response.body
+        return new ddsnodeclient.AppApi(client).getApiV1AppStatus().then((response) => {
+            return JSON.stringify(response.body, null, '\t');
         });
     };
 });
