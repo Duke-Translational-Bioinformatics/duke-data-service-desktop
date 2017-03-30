@@ -22,7 +22,7 @@ function getInstallerConfig () {
     loadingGif: path.join(rootPath, 'assets', 'img', 'loading.gif'),
     noMsi: true,
     outputDirectory: path.join(outPath, 'windows-installer'),
-    setupExe: 'ElectronAPIDemosSetup.exe',
+    setupExe: 'DDSDesktop.exe',
     setupIcon: path.join(rootPath, 'assets', 'app-icon', 'win', 'app.ico'),
     skipUpdateIcon: true
   })
