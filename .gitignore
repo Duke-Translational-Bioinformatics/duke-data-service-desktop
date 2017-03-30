@@ -8,6 +8,7 @@ npm-debug.log*
 *.idea
 .idea/
 playground/
+out/
 
 # Runtime data
 pids
