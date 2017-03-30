@@ -37,8 +37,12 @@
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="manage-window">GET</button>
-            <span class="demo-response" id="manage-window-reply"></span>
+            <button class="demo-button" ng-click="getUsage()">GET</button>
+          </div>
+
+          <div class="demo-protip">
+            <h2>Results</h2>
+            <p>{{ userUsage }}</p>
           </div>
         </div>
       </div>
@@ -51,8 +55,12 @@
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="manage-window">GET</button>
-            <span class="demo-response" id="manage-window-reply"></span>
+            <button class="demo-button" ng-click="getRoles()">GET</button>
+          </div>
+
+          <div class="demo-protip">
+            <h2>Results</h2>
+            <p>{{ projectRoles }}</p>
           </div>
         </div>
       </div>
@@ -65,9 +73,13 @@
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="frameless-window">GET</button>
+            <button class="demo-button" ng-click="getProjects()">GET</button>
           </div>
 
+          <div class="demo-protip">
+            <h2>Results</h2>
+            <p>{{ projects }}</p>
+          </div>
         </div>
       </div>
     </div>
